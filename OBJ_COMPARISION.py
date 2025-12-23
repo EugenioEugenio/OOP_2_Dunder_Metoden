@@ -8,7 +8,7 @@ class Millimeter:
     """Базовый класс для представления измерений в миллиметрах."""
     label = "mm"
     # Коэффициенты пересчета в миллиметры для дочерних классов
-    _ratio = 1.0
+    ratio = 1.0
 
     def __init__(self, value):
         if not isinstance(value, (int, float)):
@@ -17,7 +17,7 @@ class Millimeter:
 
     def as_millimeters(self):
         """Возвращает значение в миллиметрах."""
-        return self.value * self._ratio
+        return self.value * self.ratio
 
     def __eq__(self, other):
         """Проверяет равенство объектов через их хэш."""
@@ -46,15 +46,15 @@ class Millimeter:
 
 class Centimeter(Millimeter):
     """Класс для представления измерений в сантиметрах."""
-    _ratio = 10.0 # 1 см = 10 мм
+    ratio = 10.0 # 1 см = 10 мм
     label = "cm"
 class Meter(Millimeter):
     """Класс для представления измерений в метрах."""
-    _ratio = 1000.0 # 1 м = 1000 мм
+    ratio = 1000.0 # 1 м = 1000 мм
     label = "m"
 class Inch(Millimeter):
     """Класс для представления измерений в дюймах."""
-    _ratio = 25.4 # 1 дюйм = 25.4 мм (приблизительно)
+    ratio = 25.4 # 1 дюйм = 25.4 мм (приблизительно)
     label = "inc"
 # Создание объектов различных классов
 mm = Millimeter(10)        # 10 мм

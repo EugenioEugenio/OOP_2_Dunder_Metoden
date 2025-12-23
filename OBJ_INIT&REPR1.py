@@ -8,7 +8,7 @@ class Millimeter:
     def __init__(self, value):
         # Базовые атрибуты, которые будут переопределены или использованы дочерними классами
         self.label = 'mm'
-        self.ratio = 1
+        self.ratio = 1.0
         self.value = value
 
     def as_millimeters(self):
