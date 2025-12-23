@@ -13,8 +13,8 @@ class Millimeter:
         """
         Возвращает значение объекта в миллиметрах как целое число.
         """
-        # 1 метр = 1000 миллиметров
-        value_mm = self.value_millimeters # * 1000
+        
+        value_mm = self.value_millimeters 
         return int(value_mm)
 
     def __float__(self):
